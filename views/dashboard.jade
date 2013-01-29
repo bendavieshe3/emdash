@@ -2,22 +2,32 @@
 extends layout
 
 block content
-  a(href="/") Emdash Home
-  h1= title
-  - if (screens.length)
-    ul.dashboard-screens
-      - screens.forEach(function(screen){
-        li
-          h2= screen.title
-          iframe(src=screen.url)  
-      - })
-  - else 
-    p No screens configured
+  #emdash
+    #status
 
-block scripts 
-  script(src='/javascripts/external/jquery.min.js')
-  script
-    $(document).ready(function() {
-      $('h1').css('color','blue');
-    });
-  script(src='/javascripts/external/spine/spine.js')
+    a(href="/") Emdash Home
+    h1.dashboard-name= title
+    - if (screens.length)
+      ul#screens
+        - screens.forEach(function(screen){
+          li
+            h2= screen.title
+            iframe(src=screen.url)  
+        - })
+    - else 
+      p No screens configured
+
+  block scripts
+
+    // libs
+    script(src='/scripts/lib/json2.js')
+    script(src='/scripts/lib/jquery.min.js')
+    script(src='/scripts/lib/jquery.tmpl.js')
+    script(src='/scripts/lib/spine/spine.js')
+    script(src='/scripts/lib/spine/local.js')  
+
+    //dev
+    script(src='/scripts/app/assert.js')
+
+    //app
+    script(src='/scripts/app/app.js')

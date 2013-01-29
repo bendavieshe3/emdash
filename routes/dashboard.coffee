@@ -11,16 +11,6 @@ data =
       title: "BOM"
       url: "/"
     ]
-# data = 
-#   title: "Cloud Services"
-#   screens: [
-#       title: "SVN Redbook"
-#       url: "http://svnbook.red-bean.com/"
-#     , 
-#       title: "BOM"
-#       url: "http://www.bom.gov.au/"
-#     ]
-
 
 page = (req, res) ->
   res.render('dashboard', data ) 
