@@ -1,0 +1,23 @@
+// dashboard.jade
+extends layout
+
+block content
+  a(href="/") Emdash Home
+  h1= title
+  - if (screens.length)
+    ul.dashboard-screens
+      - screens.forEach(function(screen){
+        li
+          h2= screen.title
+          iframe(src=screen.url)  
+      - })
+  - else 
+    p No screens configured
+
+block scripts 
+  script(src='/javascripts/external/jquery.min.js')
+  script
+    $(document).ready(function() {
+      $('h1').css('color','blue');
+    });
+  script(src='/javascripts/external/spine/spine.js')

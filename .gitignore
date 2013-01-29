@@ -19,3 +19,4 @@ node_modules
 # Added 
 .c9revisions
 heroku-client
+routes/*.js

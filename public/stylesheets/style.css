@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+
+ul.dashboard-screens iframe {
+	width:80%;
+	height:90%;
+	display: block;
+}
