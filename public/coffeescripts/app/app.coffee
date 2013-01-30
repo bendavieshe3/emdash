@@ -8,10 +8,11 @@ class Dashboard extends Spine.Model
   @extend Spine.Model.Local
   @extend
     default: ->
-      console.log('creating default')
       new Dashboard(name:"My Dashboard", owner:"Some dude").save()
 
   displayName: -> @name or "Unknown Dashboard"
+
+
 
 class DashboardApp extends Spine.Controller
 
@@ -31,9 +32,7 @@ class DashboardApp extends Spine.Controller
     @statusBox.text(msg)
 
   dashboardUpdated: =>
-    console.log('dashboard updated1')
     @dash = Dashboard.first() or Dashboard.default()
-    console.log(@dash)
     @nameText.text(@dash.displayName)
 
 $ ->
